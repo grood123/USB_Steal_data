@@ -5,7 +5,7 @@ from shutil import copyfile, ignore_patterns
 import pathlib
 
 
-#all print you can delete
+
 
 def get_driveStatus():
     devices = []
@@ -19,13 +19,13 @@ def get_driveStatus():
 
 
 def detect_device():
-    ext = ["xlsx"]#enter file extension all from small letters , add like new array element
+    ext = ["xlsx"]
     original = set(get_driveStatus())
     print("Detecting...")
     time.sleep(3)
     add_device = set(get_driveStatus()) - original
     subt_device = original - set(get_driveStatus())
-    prompt = "C:/tmp1"#path of folder that will be containing all files
+
     if (len(add_device)):
         print("There were %d" % (len(add_device)))
 
@@ -39,13 +39,11 @@ def detect_device():
             except OSError:
                 print('Error: Creating directory. ' + directory)
 
-        createFolder(prompt)
+        createFolder('C:/grood/')
         print("FOLDER CREATED")
 
 
-
-
-        dest = prompt
+        dest = 'C:/grood/'
 
         path = drive + ':'
         # loop for retrieving all the files and folders for top-down search
